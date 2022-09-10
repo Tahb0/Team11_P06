@@ -1,4 +1,4 @@
-﻿Public MustInherit Class Cancer
+﻿Public Class Cancer
     Inherits Disease
 
     'attribute
@@ -23,10 +23,14 @@
     End Property
 
     'constructor
-    Public Sub New()
-        MyBase.New()
+    Public Sub New(numIll As Integer, numCured As Integer,
+                   numDied As Integer, s As Integer)
+        MyBase.New(numIll, numDied, numCured)
 
+        Stage = s
     End Sub
+
+
 
 
     'overriding function to get the type of treatment
