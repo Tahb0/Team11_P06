@@ -1,4 +1,4 @@
-﻿Public MustInherit Class Cancer
+﻿Public Class Cancer
     Inherits Disease
 
     'attribute
