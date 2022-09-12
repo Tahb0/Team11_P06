@@ -67,25 +67,33 @@ Public Class Tuberculosis
     Public Overrides Function DetermineTreatment() As String
 
         If _Stage = 1 And _Vaccinated = True Then
-            _Treatment = "Four months of taking Isoniazid and Rifapentine as combination, in an Isolation."
+            _Treatment = "Four months of Isoniazid and Rifapentine as combination, in an Isolation."
         End If
         If _Stage = 1 And _Vaccinated = False Then
-            _Treatment = "Nine months of taking Isoniazid and Rifapentine as combination, in an Isolation." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
+            _Treatment = "Nine months of Isoniazid and Rifapentine as combination, in an Isolation." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
         End If
         If _Stage = 2 And _Vaccinated = True Then
-            _Treatment = "Patient Must take combination of Rifampicin and Rifapentine."
+            _Treatment = "Combination of Rifampicin and Rifapentine."
         End If
         If _Stage = 2 And _Vaccinated = False Then
-            _Treatment = "Patient must take combination of Isoniazid, Rifampicin and Rifapentine." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
+            _Treatment = "Combination of Isoniazid, Rifampicin and Rifapentine." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
         End If
         If _Stage = 3 And _Vaccinated = True Then
-            _Treatment = "Patient must take combination of Pyrazinamide, Rifampicin and Rifapentine."
+            _Treatment = "Combination of Pyrazinamide, Rifampicin and Rifapentine."
         End If
         If _Stage = 3 And _Vaccinated = False Then
-            _Treatment = "Patient must take combiantion of Pyrazinamide, Ethambutol and Rifapentine." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
+            _Treatment = "Combiantion of Pyrazinamide, Ethambutol and Rifapentine." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
         End If
         Return _Treatment
     End Function
+    'This method will calculate the number o people who are not vaccinated.
+    Public Function CalcNonVaccinated() As Integer
 
-
+        Dim NumPpl As Integer ' Number of people who are not vaccinated 
+        NumPpl = 0
+        If Vaccinated = False Then
+            NumPpl += 1
+        End If
+        Return NumPpl
+    End Function
 End Class
