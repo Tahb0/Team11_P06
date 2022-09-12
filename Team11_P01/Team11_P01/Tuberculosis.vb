@@ -18,6 +18,8 @@ Public Class Tuberculosis
     Private _Stage As Integer
     Private _Vaccinated As Boolean 'To get weather the person is vaccinated or not.
 
+    Private _Treatment As String
+
     ' Constructor 
     Public Sub New(numIll As Integer, numCured As Integer,
                    numDied As Integer)
@@ -31,7 +33,9 @@ Public Class Tuberculosis
             Return _Stage
         End Get
         Set(value As Integer)
-            If value >= 1 Then
+            If value < 1 Then
+                value = 0
+            Else
                 _Stage = value
             End If
         End Set
@@ -45,7 +49,25 @@ Public Class Tuberculosis
             _Vaccinated = value
         End Set
     End Property
+
+    Public Property Treatment() As String
+        Get
+            Return _Treatment
+        End Get
+        Set(value As String)
+            _Treatment = value
+        End Set
+    End Property
+
+    ' methods 
     Public Overrides Function DetermineTreatment() As String
-        Throw New NotImplementedException()
+
+        If Stage = 1 And Vaccinated = True Then
+            _Treatment = "One week Isolation, " & Environment.NewLine & ""
+        End If
+        If Stage = 1 And Vaccinated = False Then
+            _Treatment = ""
+        End If
+        Return _Treatment
     End Function
 End Class
