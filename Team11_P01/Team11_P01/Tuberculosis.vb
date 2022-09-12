@@ -19,6 +19,10 @@ Public Class Tuberculosis
     Private _Vaccinated As Boolean 'To get weather the person is vaccinated or not.
 
     ' Constructor 
+    Public Sub New()
+
+    End Sub
+
     Public Sub New(numIll As Integer, numCured As Integer,
                    numDied As Integer)
         MyBase.New(numIll, numCured, numDied)

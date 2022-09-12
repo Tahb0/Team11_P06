@@ -23,6 +23,10 @@
     End Property
 
     'constructor
+    Public Sub New()
+
+    End Sub
+
     Public Sub New(numIll As Integer, numCured As Integer,
                    numDied As Integer, s As Integer)
         MyBase.New(numIll, numDied, numCured)
