@@ -66,12 +66,26 @@ Public Class Tuberculosis
     ' methods 
     Public Overrides Function DetermineTreatment() As String
 
-        If Stage = 1 And Vaccinated = True Then
-            _Treatment = "One week Isolation, " & Environment.NewLine & ""
+        If _Stage = 1 And _Vaccinated = True Then
+            _Treatment = "Four months of taking Isoniazid and Rifapentine as combination, in an Isolation."
         End If
-        If Stage = 1 And Vaccinated = False Then
-            _Treatment = ""
+        If _Stage = 1 And _Vaccinated = False Then
+            _Treatment = "Nine months of taking Isoniazid and Rifapentine as combination, in an Isolation." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
+        End If
+        If _Stage = 2 And _Vaccinated = True Then
+            _Treatment = "Patient Must take combination of Rifampicin and Rifapentine."
+        End If
+        If _Stage = 2 And _Vaccinated = False Then
+            _Treatment = "Patient must take combination of Isoniazid, Rifampicin and Rifapentine." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
+        End If
+        If _Stage = 3 And _Vaccinated = True Then
+            _Treatment = "Patient must take combination of Pyrazinamide, Rifampicin and Rifapentine."
+        End If
+        If _Stage = 3 And _Vaccinated = False Then
+            _Treatment = "Patient must take combiantion of Pyrazinamide, Ethambutol and Rifapentine." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
         End If
         Return _Treatment
     End Function
+
+
 End Class
