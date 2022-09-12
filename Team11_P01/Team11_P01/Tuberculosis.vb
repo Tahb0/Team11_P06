@@ -21,6 +21,10 @@ Public Class Tuberculosis
     Private _Treatment As String
 
     ' Constructor 
+    Public Sub New()
+
+    End Sub
+
     Public Sub New(numIll As Integer, numCured As Integer,
                    numDied As Integer)
         MyBase.New(numIll, numCured, numDied)
