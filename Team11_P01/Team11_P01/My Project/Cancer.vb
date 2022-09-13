@@ -1,4 +1,8 @@
-﻿Public Class Cancer
+﻿'option statements 
+option Strict on 
+option explicit on 
+option  infer off
+Public Class Cancer
     Inherits Disease
 
     'attribute
