@@ -22,7 +22,7 @@ Public Class Tuberculosis
 
     ' Constructor 
     Public Sub New()
-
+        _Treatment = ""
     End Sub
 
     Public Sub New(numIll As Integer, numCured As Integer,
