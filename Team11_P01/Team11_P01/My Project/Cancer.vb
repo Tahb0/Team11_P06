@@ -18,7 +18,7 @@ Option Explicit On
 Option Infer Off
 >>>>>>> 740d58a589fb7b05b1bf0aa5d3ebd54ea3955e61
 Public Class Cancer
-    Inherits desease
+    Inherits Disease
 
     'attribute
     Private _TypeOfCancer As String
