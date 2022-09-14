@@ -22,42 +22,54 @@ Partial Class frmDiseaseMonitor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.UjGrid1 = New UJGrid.UJGrid()
+        Me.btnCaputure = New System.Windows.Forms.Button()
+        Me.grdPatientMonitor = New UJGrid.UJGrid()
+        Me.btnSetUp = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnCaputure
         '
-        Me.Button1.Location = New System.Drawing.Point(25, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(119, 41)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCaputure.Location = New System.Drawing.Point(24, 64)
+        Me.btnCaputure.Name = "btnCaputure"
+        Me.btnCaputure.Size = New System.Drawing.Size(119, 41)
+        Me.btnCaputure.TabIndex = 0
+        Me.btnCaputure.Text = "Capture Input"
+        Me.btnCaputure.UseVisualStyleBackColor = True
         '
-        'UjGrid1
+        'grdPatientMonitor
         '
-        Me.UjGrid1.FixedCols = 1
-        Me.UjGrid1.FixedRows = 1
-        Me.UjGrid1.Location = New System.Drawing.Point(174, 12)
-        Me.UjGrid1.Name = "UjGrid1"
-        Me.UjGrid1.Scrollbars = System.Windows.Forms.ScrollBars.Both
-        Me.UjGrid1.Size = New System.Drawing.Size(229, 150)
-        Me.UjGrid1.TabIndex = 1
+        Me.grdPatientMonitor.FixedCols = 1
+        Me.grdPatientMonitor.FixedRows = 1
+        Me.grdPatientMonitor.Location = New System.Drawing.Point(174, 12)
+        Me.grdPatientMonitor.Name = "grdPatientMonitor"
+        Me.grdPatientMonitor.Scrollbars = System.Windows.Forms.ScrollBars.Both
+        Me.grdPatientMonitor.Size = New System.Drawing.Size(229, 150)
+        Me.grdPatientMonitor.TabIndex = 1
+        '
+        'btnSetUp
+        '
+        Me.btnSetUp.Location = New System.Drawing.Point(24, 17)
+        Me.btnSetUp.Name = "btnSetUp"
+        Me.btnSetUp.Size = New System.Drawing.Size(119, 41)
+        Me.btnSetUp.TabIndex = 2
+        Me.btnSetUp.Text = "Set Up"
+        Me.btnSetUp.UseVisualStyleBackColor = True
         '
         'frmDiseaseMonitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.UjGrid1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnSetUp)
+        Me.Controls.Add(Me.grdPatientMonitor)
+        Me.Controls.Add(Me.btnCaputure)
         Me.Name = "frmDiseaseMonitor"
         Me.Text = "Patients Records "
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents UjGrid1 As UJGrid.UJGrid
+    Friend WithEvents btnCaputure As Button
+    Friend WithEvents grdPatientMonitor As UJGrid.UJGrid
+    Friend WithEvents btnSetUp As Button
 End Class
