@@ -15,85 +15,60 @@ Option Infer Off
 Public MustInherit Class Disease
 
     '       member variables 
-    Private _nIll As Integer 'num ill people
-    Private _nCured As Integer 'per year?
-    Private _nDied As Integer
-
-    Private _nAvailableMeds As Integer
-    Private _nMedsInShortage As Integer
+    Private _stage As Integer
+    Private _name As String
 
     '       >>> shared variables  <<<
     Public Shared shrdTotIll As Integer 'total ill from all diseases
-    Public Shared shrdTotCured As Integer
-    Public Shared shrdTodDied As Integer
+
 
     '       >>> constructors  <<<
     Public Sub New()
 
     End Sub
 
-    Public Sub New(numIll As Integer, numCured As Integer,
-                   numDied As Integer)
+    Public Sub New(stage As Integer)
 
-        _nIll = numIll
-        _nCured = numCured
-        _nDied = numDied
+        'make sure the stage is between 1 and 4
+        _stage = EnforceStageVal(stage)
 
     End Sub
 
     '       >>> Property <<<
-    Public ReadOnly Property NumIll As Integer
+    Public ReadOnly Property DName() As String
         Get
-            Return _nIll
+            Return _name
         End Get
     End Property
 
-    Public ReadOnly Property NumCured As Integer
+    Public Property Stage() As Integer
         Get
-            Return _nCured
-        End Get
-    End Property
-
-    Public ReadOnly Property NumDied As Integer
-        Get
-            Return _nDied
-        End Get
-    End Property
-
-    Public Property AvailableMeds As Integer
-        Get
-            Return _nAvailableMeds
+            Return _stage
         End Get
         Set(value As Integer)
-            'validate the input
-            If (value < 0) Then
-                _nAvailableMeds = 0
-            Else
-                _nAvailableMeds = value
-            End If
+
+            _stage = EnforceStageVal(value)
+
         End Set
     End Property
 
     '       >>> Methods <<<
-    Private Sub CalcNumShortOfMeds()  'utility Method
-        If _nAvailableMeds < _nIll Then
-            _nMedsInShortage = -(_nIll - _nAvailableMeds) 'to make the number +
-
+    '           >> Utility  <<
+    Private Function EnforceStageVal(ByRef Stage As Integer) As Integer
+        If Stage < 1 Then
+            Stage = 1
         Else
-            _nMedsInShortage = _nIll - _nAvailableMeds
+            If Stage > 4 Then
+                Stage = 4
+            End If
+
         End If
 
-    End Sub
-
-    'a function to get the number of meds in shortage
-    Public Function getNumMedsInShortage() As Integer
-        'first calculate
-        CalcNumShortOfMeds()
-
-        Return _nMedsInShortage
+        Return Stage
     End Function
 
     '   >>> MustOverrideMethod <<<
     Public MustOverride Function DetermineTreatment() As String
+
 
 End Class
