@@ -15,7 +15,6 @@ Public Class Tuberculosis
     'Attributes of TB
     Inherits Disease
 
-    Private _Stage As Integer
     Private _Vaccinated As Boolean 'To get weather the person is vaccinated or not.
 
     Private _Treatment As String
@@ -28,25 +27,7 @@ Public Class Tuberculosis
     Public Sub New(stage As Integer)
         MyBase.New(stage)
     End Sub
-    'Public Sub New(numIll As Integer, numCured As Integer,
-    '               numDied As Integer)
-    '    MyBase.New(numIll, numCured, numDied)
-    'End Sub
 
-    ' Property methods 
-
-    'Public Property Stage() As Integer
-    '    Get
-    '        Return _Stage
-    '    End Get
-    '    Set(value As Integer)
-    '        If value < 1 Then
-    '            value = 0
-    '        Else
-    '            _Stage = value
-    '        End If
-    '    End Set
-    'End Property
 
     Public Property Vaccinated() As Boolean
         Get
@@ -69,25 +50,25 @@ Public Class Tuberculosis
     ' methods 
     Public Overrides Function DetermineTreatment() As String
 
-        If _Stage = 1 And _Vaccinated = True Then
-            _Treatment = "Four months of Isoniazid and Rifapentine as combination, in an Isolation."
+        If Stage = 1 And Vaccinated = True Then
+            Treatment = "INH"
         End If
-        If _Stage = 1 And _Vaccinated = False Then
-            _Treatment = "Nine months of Isoniazid and Rifapentine as combination, in an Isolation." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
+        If Stage = 1 And Vaccinated = False Then
+            Treatment = "INH, RPT & Isol"
         End If
-        If _Stage = 2 And _Vaccinated = True Then
-            _Treatment = "Combination of Rifampicin and Rifapentine."
+        If Stage = 2 And Vaccinated = True Then
+            _Treatment = "RIF & RPT"
         End If
-        If _Stage = 2 And _Vaccinated = False Then
-            _Treatment = "Combination of Isoniazid, Rifampicin and Rifapentine." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
+        If Stage = 2 And Vaccinated = False Then
+            Treatment = "INH, RIF & RPT"
         End If
-        If _Stage = 3 And _Vaccinated = True Then
-            _Treatment = "Combination of Pyrazinamide, Rifampicin and Rifapentine."
+        If Stage = 3 And Vaccinated = True Then
+            Treatment = "PZA, RIF & RPT"
         End If
-        If _Stage = 3 And _Vaccinated = False Then
-            _Treatment = "Combiantion of Pyrazinamide, Ethambutol and Rifapentine." & Environment.NewLine & "After getting cured, Patient must get vaccinated."
+        If Stage = 3 And Vaccinated = False Then
+            Treatment = "PZA, EMB & RPT"
         End If
-        Return _Treatment
+        Return Treatment
     End Function
     'This method will calculate the number o people who are not vaccinated.
     Public Function CalcNonVaccinated() As Integer
