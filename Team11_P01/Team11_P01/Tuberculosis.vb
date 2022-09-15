@@ -28,7 +28,6 @@ Public Class Tuberculosis
         MyBase.New(stage)
     End Sub
 
-
     Public Property Vaccinated() As Boolean
         Get
             Return _Vaccinated
