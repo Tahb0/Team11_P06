@@ -27,10 +27,6 @@ Public Class frmDiseaseMonitor
                                        "Cancer",
                                        "HIV/Aids"}
 
-
-
-
-
     'a sub to place text in grid
     Private Sub PIG(r As Integer, c As Integer, t As String)
 
@@ -90,7 +86,7 @@ Public Class frmDiseaseMonitor
                         objTb.Vaccinated = False
                     End If
 
-                    objTb.Stage = CInt(InputBox("What stage of tb(1-3):"))
+                    objTb.Stage = CInt(InputBox("What stage of TB(1-3):"))
 
                     'make sure the stage is between 1 and 3
                     If (objTb.Stage > 3) Then
