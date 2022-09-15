@@ -67,9 +67,9 @@ Public Class frmDiseaseMonitor
                     'create a tb obj for the patient
                     Dim objTb As New Tuberculosis
 
-                    Dim isVaccinated As String = InputBox("Is the patient Vaccinated?" & vbNewLine &
+                    Dim isVaccinated As Char = CChar(InputBox("Is the patient Vaccinated?" & vbNewLine &
                                                           "Enter Y = Yes" & vbNewLine &
-                                                          "N = No")
+                                                          "N = No"))
 
                     If isVaccinated = "Y" Or isVaccinated = "y" Then
                         objTb.Vaccinated = True
@@ -86,11 +86,11 @@ Public Class frmDiseaseMonitor
                 Else
                     If diseaseInput = DiseaseRepresentation.Cancer Then
                         'create a cancer obj for the patient
-                        'Dim objCancer As New Cancer
-                        'objCancer.Stage = CInt(InputBox("What stage of Cancer(1-4):"))
+                        Dim objCancer As New cancer
+                        objCancer.Stage = CInt(InputBox("What stage of Cancer(1-4):"))
 
-                        ''upcasting
-                        'objPatient(p).PDisease(d) = objCancer
+                        'upcasting
+                        objPatient(p).PDisease(d) = objCancer
                     Else
                         If diseaseInput = DiseaseRepresentation.Aids Then
                             'create a cancer obj for the patient
