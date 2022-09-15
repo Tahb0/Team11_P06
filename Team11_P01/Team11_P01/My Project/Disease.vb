@@ -18,10 +18,6 @@ Public MustInherit Class Disease
     Private _stage As Integer
     Private _name As String
 
-    '       >>> shared variables  <<<
-    Public Shared shrdTotIll As Integer 'total ill from all diseases
-
-
     '       >>> constructors  <<<
     Public Sub New()
 
@@ -35,10 +31,13 @@ Public MustInherit Class Disease
     End Sub
 
     '       >>> Property <<<
-    Public ReadOnly Property DName() As String
+    Public Property DName() As String
         Get
             Return _name
         End Get
+        Set(value As String)
+            _name = value
+        End Set
     End Property
 
     Public Property Stage() As Integer

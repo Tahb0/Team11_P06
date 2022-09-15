@@ -24,6 +24,9 @@ Public Class Patient
 
     Private Shared HospitalId As Integer = 0
 
+
+    Public Shared shrdTotWeight As Double = 0.0
+
     Public Sub New()
         givePatientId() 'each new patient gets a unique id
 
@@ -59,6 +62,9 @@ Public Class Patient
             Return _pWeight
         End Get
         Set(value As Double)
+
+            'add to the total weight
+            shrdTotWeight += value
             _pWeight = value
         End Set
     End Property

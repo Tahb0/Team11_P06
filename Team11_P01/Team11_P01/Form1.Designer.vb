@@ -27,6 +27,8 @@ Partial Class frmDiseaseMonitor
         Me.btnSetUp = New System.Windows.Forms.Button()
         Me.btnAvailPatients = New System.Windows.Forms.Button()
         Me.btnChooseP = New System.Windows.Forms.Button()
+        Me.txtAveWeight = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnCaputure
@@ -45,7 +47,7 @@ Partial Class frmDiseaseMonitor
         Me.grdPatientMonitor.Location = New System.Drawing.Point(149, 12)
         Me.grdPatientMonitor.Name = "grdPatientMonitor"
         Me.grdPatientMonitor.Scrollbars = System.Windows.Forms.ScrollBars.Both
-        Me.grdPatientMonitor.Size = New System.Drawing.Size(535, 263)
+        Me.grdPatientMonitor.Size = New System.Drawing.Size(535, 187)
         Me.grdPatientMonitor.TabIndex = 1
         '
         'btnSetUp
@@ -75,11 +77,29 @@ Partial Class frmDiseaseMonitor
         Me.btnChooseP.Text = "Choose Patient"
         Me.btnChooseP.UseVisualStyleBackColor = True
         '
+        'txtAveWeight
+        '
+        Me.txtAveWeight.Location = New System.Drawing.Point(236, 210)
+        Me.txtAveWeight.Name = "txtAveWeight"
+        Me.txtAveWeight.Size = New System.Drawing.Size(100, 20)
+        Me.txtAveWeight.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(146, 213)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(84, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Average Weight"
+        '
         'frmDiseaseMonitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 427)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtAveWeight)
         Me.Controls.Add(Me.btnChooseP)
         Me.Controls.Add(Me.btnAvailPatients)
         Me.Controls.Add(Me.btnSetUp)
@@ -88,6 +108,7 @@ Partial Class frmDiseaseMonitor
         Me.Name = "frmDiseaseMonitor"
         Me.Text = "Patients Records "
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -96,4 +117,6 @@ Partial Class frmDiseaseMonitor
     Friend WithEvents btnSetUp As Button
     Friend WithEvents btnAvailPatients As Button
     Friend WithEvents btnChooseP As Button
+    Friend WithEvents txtAveWeight As TextBox
+    Friend WithEvents Label1 As Label
 End Class

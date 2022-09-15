@@ -22,6 +22,15 @@ Public Class frmDiseaseMonitor
     Private nP As Integer
     Private objPatient() As Patient
 
+    'array to hold disease names 
+    Private DiseaseName() As String = {"Tuberculosis",
+                                       "Cancer",
+                                       "HIV/Aids"}
+
+
+
+
+
     'a sub to place text in grid
     Private Sub PIG(r As Integer, c As Integer, t As String)
 
@@ -67,6 +76,9 @@ Public Class frmDiseaseMonitor
                     'create a tb obj for the patient
                     Dim objTb As New Tuberculosis
 
+                    'set the disease name 
+                    objTb.DName = DiseaseName(DiseaseRepresentation.Tb - 1)
+
                     Dim isVaccinated As Char = CChar(InputBox("Is the patient Vaccinated?" & vbNewLine &
                                                           "Enter Y = Yes" & vbNewLine &
                                                           "N = No"))
@@ -80,6 +92,11 @@ Public Class frmDiseaseMonitor
 
                     objTb.Stage = CInt(InputBox("What stage of tb(1-3):"))
 
+                    'make sure the stage is between 1 and 3
+                    If (objTb.Stage > 3) Then
+                        objTb.Stage = 3
+                    End If
+
                     'upcasting
                     objPatient(p).PDisease(d) = objTb
 
@@ -87,6 +104,10 @@ Public Class frmDiseaseMonitor
                     If diseaseInput = DiseaseRepresentation.Cancer Then
                         'create a cancer obj for the patient
                         Dim objCancer As New cancer
+
+                        'set the disease name
+                        objCancer.DName = DiseaseName(DiseaseRepresentation.Cancer - 1)
+
                         objCancer.Stage = CInt(InputBox("What stage of Cancer(1-4):"))
 
                         'upcasting
@@ -101,6 +122,10 @@ Public Class frmDiseaseMonitor
             Next d
 
         Next p
+
+        'display the average weight
+        Dim aveW As Double = Patient.shrdTotWeight / nP
+        txtAveWeight.Text = Format(aveW, "0.##")
     End Sub
 
     Private Sub btnAvailPatients_Click(sender As Object, e As EventArgs) Handles btnAvailPatients.Click
@@ -139,7 +164,7 @@ Public Class frmDiseaseMonitor
         'place the patient's information
         For d As Integer = 1 To objPatient.numDiseases
 
-            PIG(0, d, "Treatment " & d)
+            PIG(0, d, objPatient.PDisease(d).DName & " Treatment")
             PIG(1, d, objPatient.PDisease(d).DetermineTreatment) 'polymorphism
 
         Next
