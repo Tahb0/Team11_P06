@@ -15,7 +15,7 @@ Public Class Cancer
 
     'attribute
     Private _TypeOfCancer As String
-    Private _Stage As Integer
+
 
     'properties
     Public ReadOnly Property typeOfCancer As String
@@ -24,15 +24,6 @@ Public Class Cancer
         End Get
     End Property
 
-    Public Property Stage As Integer
-        Get
-            Return _Stage
-
-        End Get
-        Set(value As Integer)
-            _Stage = value
-        End Set
-    End Property
 
     'constructor
     Public Sub New()
@@ -41,7 +32,7 @@ Public Class Cancer
 
     Public Sub New(numIll As Integer, numCured As Integer,
                    numDied As Integer, s As Integer)
-        MyBase.New(numIll, numDied, numCured)
+        MyBase.New()
 
         Stage = s
     End Sub
