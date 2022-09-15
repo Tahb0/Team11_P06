@@ -30,11 +30,10 @@ Public Class Cancer
 
     End Sub
 
-    Public Sub New(numIll As Integer, numCured As Integer,
-                   numDied As Integer, s As Integer)
-        MyBase.New()
+    Public Sub New(stage As Integer)
+        MyBase.New(stage)
 
-        Stage = s
+        stage = stage
     End Sub
 
 
