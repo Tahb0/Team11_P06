@@ -1,7 +1,3 @@
-Option Strict On
-Option Explicit On
-Option Infer Off
-
 ' ***************************************************************** 
 ' Team Number: 11 
 ' Team Member 1 Details: Matlhoko, T (217026727) 
@@ -10,7 +6,11 @@ Option Infer Off
 ' Team Member 4 Details: MAHLALELA LO (222221642) 
 ' Practical: Team Project 
 ' Class name: (Cancer) 
-' *****************************************************************
+'
+
+Option Strict On
+Option Explicit On
+Option Infer Off
 
 
 Public Class cancer
