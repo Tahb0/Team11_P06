@@ -143,6 +143,7 @@ Public Class frmDiseaseMonitor
     Private Sub DisplayP(objPatient As Patient)
 
         'resize and clear the grid
+        PIG(0, 0, "")
         For p As Integer = 1 To nP
             PIG(0, p, "")
         Next
