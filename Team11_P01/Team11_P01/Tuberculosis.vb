@@ -25,25 +25,28 @@ Public Class Tuberculosis
         _Treatment = ""
     End Sub
 
-    Public Sub New(numIll As Integer, numCured As Integer,
-                   numDied As Integer)
-        MyBase.New(numIll, numCured, numDied)
+    Public Sub New(stage As Integer)
+        MyBase.New(stage)
     End Sub
+    'Public Sub New(numIll As Integer, numCured As Integer,
+    '               numDied As Integer)
+    '    MyBase.New(numIll, numCured, numDied)
+    'End Sub
 
     ' Property methods 
 
-    Public Property Stage() As Integer
-        Get
-            Return _Stage
-        End Get
-        Set(value As Integer)
-            If value < 1 Then
-                value = 0
-            Else
-                _Stage = value
-            End If
-        End Set
-    End Property
+    'Public Property Stage() As Integer
+    '    Get
+    '        Return _Stage
+    '    End Get
+    '    Set(value As Integer)
+    '        If value < 1 Then
+    '            value = 0
+    '        Else
+    '            _Stage = value
+    '        End If
+    '    End Set
+    'End Property
 
     Public Property Vaccinated() As Boolean
         Get

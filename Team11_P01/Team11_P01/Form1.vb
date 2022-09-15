@@ -52,8 +52,8 @@ Public Class frmDiseaseMonitor
 
         'prompt the user for infomation about the patient
         For p As Integer = 1 To nP
-            objPatient(p).PName = InputBox("Patient " & p & "name: ")
-            objPatient(p).PWeight = CDbl("Patient " & p & "weight(kg): ")
+            objPatient(p).PName = InputBox("Patient " & CStr(p) & " name: ")
+            objPatient(p).PWeight = CDbl(InputBox("Patient " & CStr(p) & " weight(kg): "))
 
             For d As Integer = 1 To objPatient(p).numDiseases
 
@@ -78,7 +78,7 @@ Public Class frmDiseaseMonitor
                         objTb.Vaccinated = False
                     End If
 
-                    objTb.Stage = CInt(InputBox("What stage of tb(1-4):"))
+                    objTb.Stage = CInt(InputBox("What stage of tb(1-3):"))
 
                     'upcasting
                     objPatient(p).PDisease(d) = objTb
