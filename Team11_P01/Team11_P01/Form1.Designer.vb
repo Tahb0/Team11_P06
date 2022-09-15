@@ -25,6 +25,8 @@ Partial Class frmDiseaseMonitor
         Me.btnCaputure = New System.Windows.Forms.Button()
         Me.grdPatientMonitor = New UJGrid.UJGrid()
         Me.btnSetUp = New System.Windows.Forms.Button()
+        Me.btnAvailPatients = New System.Windows.Forms.Button()
+        Me.btnChooseP = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnCaputure
@@ -40,10 +42,10 @@ Partial Class frmDiseaseMonitor
         '
         Me.grdPatientMonitor.FixedCols = 1
         Me.grdPatientMonitor.FixedRows = 1
-        Me.grdPatientMonitor.Location = New System.Drawing.Point(174, 12)
+        Me.grdPatientMonitor.Location = New System.Drawing.Point(149, 12)
         Me.grdPatientMonitor.Name = "grdPatientMonitor"
         Me.grdPatientMonitor.Scrollbars = System.Windows.Forms.ScrollBars.Both
-        Me.grdPatientMonitor.Size = New System.Drawing.Size(229, 150)
+        Me.grdPatientMonitor.Size = New System.Drawing.Size(535, 263)
         Me.grdPatientMonitor.TabIndex = 1
         '
         'btnSetUp
@@ -55,11 +57,31 @@ Partial Class frmDiseaseMonitor
         Me.btnSetUp.Text = "Set Up"
         Me.btnSetUp.UseVisualStyleBackColor = True
         '
+        'btnAvailPatients
+        '
+        Me.btnAvailPatients.Location = New System.Drawing.Point(24, 111)
+        Me.btnAvailPatients.Name = "btnAvailPatients"
+        Me.btnAvailPatients.Size = New System.Drawing.Size(119, 41)
+        Me.btnAvailPatients.TabIndex = 3
+        Me.btnAvailPatients.Text = "View Available Patients"
+        Me.btnAvailPatients.UseVisualStyleBackColor = True
+        '
+        'btnChooseP
+        '
+        Me.btnChooseP.Location = New System.Drawing.Point(24, 158)
+        Me.btnChooseP.Name = "btnChooseP"
+        Me.btnChooseP.Size = New System.Drawing.Size(119, 41)
+        Me.btnChooseP.TabIndex = 4
+        Me.btnChooseP.Text = "Choose Patient"
+        Me.btnChooseP.UseVisualStyleBackColor = True
+        '
         'frmDiseaseMonitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 427)
+        Me.Controls.Add(Me.btnChooseP)
+        Me.Controls.Add(Me.btnAvailPatients)
         Me.Controls.Add(Me.btnSetUp)
         Me.Controls.Add(Me.grdPatientMonitor)
         Me.Controls.Add(Me.btnCaputure)
@@ -72,4 +94,6 @@ Partial Class frmDiseaseMonitor
     Friend WithEvents btnCaputure As Button
     Friend WithEvents grdPatientMonitor As UJGrid.UJGrid
     Friend WithEvents btnSetUp As Button
+    Friend WithEvents btnAvailPatients As Button
+    Friend WithEvents btnChooseP As Button
 End Class
