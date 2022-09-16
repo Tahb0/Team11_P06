@@ -23,6 +23,9 @@ Public Class HIV
     Private _answer As String
 
     ' Constructor 
+    Public Sub New()
+
+    End Sub
     Public Sub New(type As Integer)
         MyBase.New(type)
     End Sub

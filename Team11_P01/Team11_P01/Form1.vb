@@ -110,8 +110,18 @@ Public Class frmDiseaseMonitor
                         objPatient(p).PDisease(d) = objCancer
                     Else
                         If diseaseInput = DiseaseRepresentation.Aids Then
-                            'create a cancer obj for the patient
+                            'create an HIV obj for the patient
+                            Dim objHiv As New HIV
 
+                            'set the disease name
+                            objHiv.DName = DiseaseName(DiseaseRepresentation.Aids - 1)
+
+                            objHiv.cd4_count = CInt(InputBox("What is the patient's CD4 " &
+                                                         "count? (1 - 1500)"))
+                            objHiv.Stage = CInt(InputBox("What is the stage? (1 - 3)"))
+
+                            'upcast the hiv disease
+                            objPatient(p).PDisease(d) = objHiv
                         End If
                     End If
                 End If
